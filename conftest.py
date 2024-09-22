@@ -12,10 +12,11 @@ def setup_browser():
 
 @pytest.fixture
 def browser_open():
-    browser.open('https://google.com')
+    browser.open('https://ya.ru')
 
 @pytest.fixture
 def check_results():
-    browser.open('https://google.com')
+    browser.open('https://ya.ru')
     yield
     print("Не найдено результатов поиска")
+    browser.quit()
