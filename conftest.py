@@ -2,21 +2,21 @@ import pytest
 from selene import browser
 
 @pytest.fixture
-def setup_browser(browser_open):
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
-    browser.config.hold_browser_open = False  # Браузер закрывается после тестов
-    browser.config.timeout = 10  # Увеличиваем время ожидания элементов
+def setup_browser(browser_2_open):
+    browser.config.window_width = 800
+    browser.config.window_height = 600
+
     yield
     browser.quit()
 
+
 @pytest.fixture
-def browser_open():
-    browser.open('https://ya.ru')
+def browser_2_open():
+    browser.open('https://www.google.co.uk/')
 
 @pytest.fixture
 def check_results():
-    browser.open('https://ya.ru')
+    browser.open('https://www.google.co.uk/')
     yield
     print("Не найдено результатов поиска")
     browser.quit()
